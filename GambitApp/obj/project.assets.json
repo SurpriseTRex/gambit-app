@@ -8,19 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\sean.johnston\\.nuget\\packages\\": {}
+    "C:\\Users\\seanc\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sean.johnston\\Downloads\\personal\\code\\GambitApp\\GambitApp\\GambitApp.csproj",
+      "projectUniqueName": "C:\\Users\\seanc\\code\\gambit-app\\GambitApp\\GambitApp.csproj",
       "projectName": "GambitApp",
-      "projectPath": "C:\\Users\\sean.johnston\\Downloads\\personal\\code\\GambitApp\\GambitApp\\GambitApp.csproj",
-      "packagesPath": "C:\\Users\\sean.johnston\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sean.johnston\\Downloads\\personal\\code\\GambitApp\\GambitApp\\obj\\",
+      "projectPath": "C:\\Users\\seanc\\code\\gambit-app\\GambitApp\\GambitApp.csproj",
+      "packagesPath": "C:\\Users\\seanc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\seanc\\code\\gambit-app\\GambitApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sean.johnston\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\seanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

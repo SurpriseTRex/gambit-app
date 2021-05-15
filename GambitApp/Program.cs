@@ -7,19 +7,25 @@ namespace GambitApp
     {
         static void Main(string[] args)
         {
-            var john = new Character("John", 100, 14);
-            var enemy = new Character("Enemy", 60, 14);
+            var john = new Character("John", 100, 14, Hostility.Friendly);
+            var enemy = new Character("Enemy", 60, 14, Hostility.Enemy);
+            
+            GameState.Characters.Add(john);
+            GameState.Characters.Add(enemy);
 
-            var healGambit = new Gambit
+            var potion = new Item("Potion I", target => target.Heal(120));
+
+            var potionGambit = new Gambit
             {
-                Condition = (actor, target) => target.Health < 10,
-                Action = (actor, target) => actor.Heal(333)
+                Condition = (actor, target) => actor.Health < 14,
+                Action = (actor, target) => actor.UseItem(potion, target)
             };
 
-            enemy.Gambits.Add(healGambit);
+            enemy.Gambits.Add(potionGambit);
 
             while (enemy.Health > 0 && john.Health > 0)
             {
+                john.TriggerGambits();
                 enemy.TriggerGambits();
                 
                 john.Attack(enemy);
@@ -30,6 +36,6 @@ namespace GambitApp
 
     public static class GameState
     {
-        public static List<Character> Characters { get; set; } = new();
+        public static List<Character> Characters { get; } = new();
     }
 }
