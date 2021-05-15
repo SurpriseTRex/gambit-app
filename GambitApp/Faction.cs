@@ -1,8 +1,8 @@
 ﻿namespace GambitApp
 {
-    public enum Hostility
+    public enum Faction
     {
-        Friendly,
+        Player,
         Enemy
     }
 }

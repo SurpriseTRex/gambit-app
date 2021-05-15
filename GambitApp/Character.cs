@@ -6,16 +6,16 @@ namespace GambitApp
 {
     public class Character
     {
-        public Character(string name, int hp, int damage, Hostility hostility = Hostility.Enemy)
+        public Character(string name, int hp, int damage, Faction faction = Faction.Enemy)
         {
             Name = name;
             Health = hp;
             Damage = damage;
-            Hostility = hostility;
+            Faction = faction;
         }
         
         public string Name { get; }
-        public Hostility Hostility { get; }
+        public Faction Faction { get; }
         public int Health { get; private set; }
         public int Damage { get; }
         
@@ -38,12 +38,13 @@ namespace GambitApp
 
         public void TriggerGambits()
         {
-            var possibleTargets = GameState.Characters
-                .Where(pt => pt.Hostility == Hostility)
-                .ToArray();
-            
             foreach (var gambit in Gambits)
             {
+                var possibleTargets = GameState.Characters
+                    .Where(pt => pt.Faction == Faction)
+                    .Where(pt => pt.Faction == gambit.Faction)
+                    .ToArray();
+                
                 foreach (var potentialTarget in possibleTargets)
                 {
                     if (gambit.IsConditionMet(this, potentialTarget))
