@@ -5,26 +5,27 @@ using GambitApp.Enums;
 
 namespace GambitApp
 {
-    public class ItemGambit
+    public class Gambit
     {
         public TargetType TargetType { get; set; }
         public Func<Character, bool> Condition { get; set; }
-        public Item Item { get; set; }
-
+        public IAction Action { get; set; }
 
         public void Run(Character owner)
         {
             var eligibleTargets = GetEligibleTargets(owner);
 
-            foreach (var eligibleTarget in eligibleTargets)
+            foreach (var potentialTarget in eligibleTargets)
             {
-                if (Condition.Invoke(eligibleTarget))
+                if (ConditionIsMet(potentialTarget))
                 {
-                    Item.Use(owner, eligibleTarget);
+                    owner.Act(owner, potentialTarget, Action);
                     return;
                 }   
             }
         }
+        
+        private bool ConditionIsMet(Character c) => Condition.Invoke(c);
 
         private IEnumerable<Character> GetEligibleTargets(Character owner)
         {

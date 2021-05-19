@@ -18,7 +18,7 @@ namespace GambitApp.Tests
         {
             Assert.NotEqual(_character.Health, _character.Mana);
             // add other fields here as we add them, to ensure that we never
-            // accidentally compare to equal but unrelated character property values.
+            // accidentally compare two equal but unrelated character property values.
         }
 
         [Fact]
