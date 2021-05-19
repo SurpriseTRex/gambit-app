@@ -1,4 +1,4 @@
-﻿namespace GambitApp
+﻿namespace GambitApp.Enums
 {
     public enum Faction
     {
